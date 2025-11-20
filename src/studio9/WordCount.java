@@ -31,14 +31,8 @@ public class WordCount {
 	public static Map<String, Integer> countWords(List<String> words) {
 		Map<String, Integer> count = new HashMap<>();
 		for (int i = 0; i < words.size(); i++){
-			for(int j = 0; j<count.size(); j++){
-				String test = words.get(i);
-				if (count.containsKey(test)){
-
-				} else(
-					count.put(words(i), 1);
-				)
-				
+			String test = words.get(i);
+			count.put(test, 1 + count.getOrDefault(test, 0));
 		}
 		return count;
 	}
@@ -53,6 +47,7 @@ public class WordCount {
 		wordList.add("to");
 		wordList.add("be");
 		Map<String, Integer> words = countWords(wordList);
+		System.out.println(words);
 		
 		//TODO: Write code that will iterate over the words map
 		//to verify its contents
